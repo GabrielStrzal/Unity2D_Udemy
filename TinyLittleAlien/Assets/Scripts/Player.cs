@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float speed;
+    public int health;
+    
     private float input;
 
     Rigidbody2D rb;
@@ -46,5 +46,15 @@ public class Player : MonoBehaviour
         
         //moving the player
         rb.velocity = new Vector2(input * speed, rb.velocity.y);
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
