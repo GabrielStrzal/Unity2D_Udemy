@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public GameObject gameOverScreen;
     public float speed;
     public int health;
     
@@ -10,11 +12,14 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
 
+    public Text healthDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        healthDisplay.text = health.ToString();
     }
 
     private void Update()
@@ -51,9 +56,11 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
+        healthDisplay.text = health.ToString();
 
-        if(health <= 0)
+        if (health <= 0)
         {
+            gameOverScreen.SetActive(true);
             Destroy(gameObject);
         }
     }

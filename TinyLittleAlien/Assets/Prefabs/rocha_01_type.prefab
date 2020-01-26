@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1062262774203612646}
   - component: {fileID: 1062262774203612645}
   m_Layer: 0
-  m_Name: rocha_01
+  m_Name: rocha_01_type
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,9 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ef9249a3315bd43aa742e88343c329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 15
-  maxSpeed: 30
+  minSpeed: 5
+  maxSpeed: 15
   damage: 1
+  explosion: {fileID: 3311964457064880267, guid: 2a458d2084fada143ad50f8b26758a1e,
+    type: 3}
 --- !u!61 &1062262774203612645
 BoxCollider2D:
   m_ObjectHideFlags: 0
